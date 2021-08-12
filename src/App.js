@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import Selectors from "./selectors/Selectors";
+import Modal from "./modal/Modal";
+
 import { fetchData } from "./utils";
 
 import "./App.css";
@@ -10,11 +12,12 @@ function App() {
   const [breeds, setBreeds] = useState(null);
   const [currentBreed, setCurrentBreed] = useState("");
   const [currentSubBreedList, setCurrentSubBreedList] = useState(null);
-
   const [currentSubBreed, setCurrentSubBreed] = useState("");
   const [imagesData, setImagesData] = useState(null);
   const [numOfImgs, setNumOfImgs] = useState(null);
   const [currentImgNum, setCurrentImgNum] = useState(1);
+  const [toggleModal, setToggleModal] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
 
   useEffect(() => {
     fetchData("https://dog.ceo/api/breeds/list/all").then((data) => {
@@ -70,8 +73,16 @@ function App() {
       );
     }
   };
-  return (
+
+  const initialiseModalImage = async (image) => {
+    await setModalImage(image);
+    await setToggleModal(true);
+  }
+  return (   
+    <>   
+  <div className={toggleModal? "background-cover": null}></div>
     <div className="container">
+
       <form className="form-group" onSubmit={fetchImages}>
         <Selectors
           currentBreed={currentBreed}
@@ -98,12 +109,20 @@ function App() {
                   key={i}
                   width={200}
                   height={200}
+                  onClick={() =>initialiseModalImage(image)}
                 />
               );
             })
           : null}
       </div>
+      {toggleModal ? (
+        <Modal>
+          {/* <span style={{color: 'red',position: 'absolute' ,top:'-3%', right: '10%'}}>close</span> */}
+         <img src= {modalImage} alt='clicked-media' width='90%' height='90%' onClick={() =>setToggleModal(false)}/>
+        </Modal>
+      ) : null}
     </div>
+    </>
   );
 }
 

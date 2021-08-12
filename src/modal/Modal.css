@@ -1,0 +1,17 @@
+#modal-root {
+  z-index: 999;
+  position: absolute;
+  left: 35%;
+  top: 14%;
+  width: 32%;
+  min-width: 350px;
+  
+
+}
+
+@media screen and (max-width: 800px) {
+  #modal-root {
+   top:25%;
+   left:15%;
+  }
+}
