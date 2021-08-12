@@ -18,6 +18,7 @@ function App() {
   const [currentImgNum, setCurrentImgNum] = useState(1);
   const [toggleModal, setToggleModal] = useState(false);
   const [modalImage, setModalImage] = useState(null);
+  const [showDownloadIcon, setShowDownloadIcon] = useState(false);
 
   useEffect(() => {
     fetchData("https://dog.ceo/api/breeds/list/all").then((data) => {
@@ -101,10 +102,14 @@ function App() {
       </form>
 
       <div className="images-viewer">
+      { showDownloadIcon ?
+              <a href="#" download={modalImage}> 💾</a> :null}
         {imagesData
           ? imagesData.map((image, i) => {
               return (
                 <LazyLoadImage
+                onMouseEnter={() => setShowDownloadIcon(true)}
+                onMouseLeave={() => setShowDownloadIcon(false)}
                   className="image-toggle"
                   src={image}
                   key={i}
@@ -114,12 +119,15 @@ function App() {
                 />
               );
             })
+         
+            
           : null}
       </div>
       {toggleModal ? (
         <Modal>
           {/* <span style={{color: 'red',position: 'absolute' ,top:'-3%', right: '10%'}}>close</span> */}
          <img src= {modalImage} alt='clicked-media' width='90%' height='90%' onClick={() =>setToggleModal(false)}/>
+         <a  style={{ textDecoration: 'none'}}href="#" download={modalImage}> 💾</a>
         </Modal>
       ) : null}
     </div>
