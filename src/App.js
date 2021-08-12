@@ -80,7 +80,8 @@ function App() {
   }
   return (   
     <>   
-  <div className={toggleModal? "background-cover": null}></div>
+  <div onClick={toggleModal? ()=> setToggleModal(false): null}  className={toggleModal? "background-cover": null}></div>
+
     <div className="container">
 
       <form className="form-group" onSubmit={fetchImages}>
