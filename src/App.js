@@ -12,9 +12,7 @@ function App() {
   const [currentSubBreedList, setCurrentSubBreedList] = useState(null);
 
   const [currentSubBreed, setCurrentSubBreed] = useState("");
-  const [imagesData, setImagesData] = useState([
-    "https://images.dog.ceo/breeds/hound-afghan/n02088094_10822.jpg",
-  ]);
+  const [imagesData, setImagesData] = useState(null);
   const [numOfImgs, setNumOfImgs] = useState(null);
   const [currentImgNum, setCurrentImgNum] = useState(1);
 
