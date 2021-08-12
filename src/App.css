@@ -1,117 +1,102 @@
-
-
-button{
+button {
   border-color: #0096aa;
   background: #0096aa;
   color: #ffffff;
   cursor: pointer;
-  border-radius:5px;
+  border-radius: 5px;
   border: transparent;
   width: 100px;
-  height: 40px; 
+  height: 40px;
 }
 
-button:hover{
+button:hover {
   background: #ffffff;
   color: #0096aa;
   margin-left: 20px;
-  border:1px solid #0096aa;
+  border: 1px solid #0096aa;
 }
 
-select{
+select {
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0);
   box-shadow: 2px 2px 2px 2px hsl(218, 60%, 92%);
   height: 25px;
-
 }
 
-input{
+input {
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0);
   box-shadow: 2px 2px 2px 2px hsl(218, 60%, 92%);
   margin-top: 5px;
   height: 22px;
-
-
 }
 
-.container{
-  display:flex;
-  
-  margin-top:20px;
+.container {
+  display: flex;
+
+  margin-top: 20px;
   margin-left: 4.5%;
   font-size: 13px;
 }
 
-.form-group{
-  display:flex;
+.form-group {
+  display: flex;
   flex-direction: row;
   justify-content: flex-start;
-
-
 }
 
-
-.selector{
-  display:flex;
+.selector {
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-left: 10px;
   width: 150px;
- 
 }
 
-.form-control{
+.form-control {
   margin-top: 5px;
   position: relative;
- 
 }
 
-.images-viewer{
+.images-viewer {
   position: absolute;
   top: 20%;
   left: 5%;
 }
 
-.image-toggle{
+.image-toggle {
   margin-right: 15px;
 }
-.image-toggle:hover{
+.image-toggle:hover {
   transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 3);
   transform: scale(1.5);
 }
 
-
-#error-border{
-
+#error-border {
   border: 1px solid #ff0000;
 }
 
-#sub-reset{
-  color:red;
-  top:32px;
+#sub-reset {
+  color: red;
+  top: 32px;
   cursor: pointer;
   font-size: 10px;
   position: absolute;
 }
 
-#view-button{
+#view-button {
   margin-left: 20px;
   margin-top: 15px;
 }
 
 @media screen and (max-width: 800px) {
-  
-#view-button{
-  position: absolute;
-  top: 10%;
-  left: 35%;
-}
+  #view-button {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+  }
 
-.image-toggle:hover{
- 
-  transform: scale(1.15);
+  .image-toggle:hover {
+    transform: scale(1.15);
+  }
 }
-}
-

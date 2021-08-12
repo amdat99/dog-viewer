@@ -1,10 +1,9 @@
-
 export const fetchData = async (url, options) => {
-    try{
+  try {
     const req = await fetch(url);
     const data = req.json();
-     return data;   
-    }catch(e){
-        console.log('fetcherror',e);
-    }                           
-}
+    return data;
+  } catch (e) {
+    console.log("fetcherror", e);
+  }
+};
