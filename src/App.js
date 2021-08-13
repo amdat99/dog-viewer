@@ -9,7 +9,7 @@ import { fetchData } from "./utils";
 import "./App.css";
 
 function App() {
-  const [breeds, setBreeds] = useState(['akita']);
+  const [breeds, setBreeds] = useState(['akitau']);
   const [currentBreed, setCurrentBreed] = useState("");
   const [currentSubBreedList, setCurrentSubBreedList] = useState(null);
   const [currentSubBreed, setCurrentSubBreed] = useState("");
