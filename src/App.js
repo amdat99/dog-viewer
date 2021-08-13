@@ -19,6 +19,7 @@ function App() {
   const [toggleModal, setToggleModal] = useState(false);
   const [modalImage, setModalImage] = useState(null);
   const [showDownloadIcon, setShowDownloadIcon] = useState(false);
+  const [scrollX, setScrollX] = useState(null)
 
   useEffect(() => {
     fetchData("https://dog.ceo/api/breeds/list/all").then((data) => {
@@ -78,10 +79,28 @@ function App() {
   const initialiseModalImage = async (image) => {
     await setModalImage(image);
     await setToggleModal(true);
+    setScrollX(document.documentElement.scrollTop)
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+     });
   }
+
+  const closeModal =  () => {
+    setToggleModal(false);
+    window.scroll({
+      top: scrollX, 
+      left: 0, 
+      behavior: 'smooth' 
+     });
+    
+  }
+  
+
   return (   
     <>   
-  <div onClick={toggleModal? ()=> setToggleModal(false): null}  className={toggleModal? "background-cover": null}></div>
+  <div onClick={toggleModal? closeModal: null}  className={toggleModal? "background-cover": null}></div>
 
     <div className="container">
 
@@ -126,7 +145,7 @@ function App() {
       {toggleModal ? (
         <Modal>
           {/* <span style={{color: 'red',position: 'absolute' ,top:'-3%', right: '10%'}}>close</span> */}
-         <img src= {modalImage} alt='clicked-media' width='90%' height='90%' onClick={() =>setToggleModal(false)}/>
+         <img src= {modalImage} alt='clicked-media' width='90%' height='90%' onClick={closeModal}/>
          <a  style={{ textDecoration: 'none'}}href="#" download={modalImage}> 💾</a>
         </Modal>
       ) : null}
