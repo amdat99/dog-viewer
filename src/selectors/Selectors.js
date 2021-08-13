@@ -15,6 +15,13 @@ function Selectors({
   getImageLength,
 }) {
   const [hasSubBreed, setHasSubBreed] = useState(true);
+  
+  const onChangeBreedSelect = () => {
+    setHasSubBreed(true);
+    setCurrentSubBreedList(null);
+    setCurrentSubBreed("");
+    getImageLength();
+  };
 
   useEffect(() => {
     onChangeBreedSelect();
@@ -38,12 +45,6 @@ function Selectors({
     getImageLength();
   }, [setCurrentSubBreed, currentSubBreed, getImageLength]);
 
-  const onChangeBreedSelect = () => {
-    setHasSubBreed(true);
-    setCurrentSubBreedList(null);
-    setCurrentSubBreed("");
-    getImageLength();
-  };
 
   return (
     <React.Fragment>

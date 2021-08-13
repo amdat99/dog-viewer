@@ -16,7 +16,7 @@ exports[`expect to render App component 1`] = `
       <Selectors
         breeds={
           Array [
-            "akita",
+            "akitau",
           ]
         }
         currentBreed=""
