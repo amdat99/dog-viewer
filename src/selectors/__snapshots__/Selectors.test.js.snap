@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to render selectors component 1`] = `
+<Fragment>
+  <div
+    className="selector"
+  >
+    <label>
+      Breed
+    </label>
+    <select
+      className="form-control"
+      id="breed-select"
+      onChange={[Function]}
+    />
+    )
+  </div>
+  <div
+    className="selector"
+  >
+    <label>
+      Sub Breed
+    </label>
+    <select
+      className="form-control2"
+      id={null}
+      onChange={[Function]}
+    />
+  </div>
+  <div
+    className="selector"
+  >
+    <label>
+      Num of Images (
+      )
+    </label>
+    <input
+      className="img-num"
+      id={null}
+      min="1"
+      name="quantity"
+      onChange={[Function]}
+      type="number"
+    />
+  </div>
+</Fragment>
+`;

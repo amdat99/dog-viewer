@@ -9,7 +9,7 @@ import { fetchData } from "./utils";
 import "./App.css";
 
 function App() {
-  const [breeds, setBreeds] = useState(null);
+  const [breeds, setBreeds] = useState(['akita']);
   const [currentBreed, setCurrentBreed] = useState("");
   const [currentSubBreedList, setCurrentSubBreedList] = useState(null);
   const [currentSubBreed, setCurrentSubBreed] = useState("");
@@ -118,11 +118,14 @@ function App() {
           getImageLength={getImageLength}
           currentImgNum={currentImgNum}
         />
+        
+      <button id="view-button" type="submit">
+        View Images
+      </button>
       </form>
 
       <div className="images-viewer">
-      { showDownloadIcon ?
-              <a href="#" download={modalImage}> 💾</a> :null}
+ 
         {imagesData
           ? imagesData.map((image, i) => {
               return (
@@ -147,6 +150,15 @@ function App() {
           {/* <span style={{color: 'red',position: 'absolute' ,top:'-3%', right: '10%'}}>close</span> */}
          <img src= {modalImage} alt='clicked-media' width='90%' height='90%' onClick={closeModal}/>
          <a  style={{ textDecoration: 'none'}}href="#" download={modalImage}> 💾</a>
+         <a
+            data-pgaction-redirection="0"
+            target="_blank"
+            rel="noopener noreferrer"
+            title={'dog image'}
+            href={`https://www.facebook.com/sharer.php?u=${window.location.href}?imageurl=${modalImage}`}
+          >
+           Facebook
+          </a>
         </Modal>
       ) : null}
     </div>

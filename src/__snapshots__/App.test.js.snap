@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to render App component 1`] = `
+<Fragment>
+  <div
+    className={null}
+    onClick={null}
+  />
+  <div
+    className="container"
+  >
+    <form
+      className="form-group"
+      onSubmit={[Function]}
+    >
+      <Selectors
+        breeds={
+          Array [
+            "akita",
+          ]
+        }
+        currentBreed=""
+        currentImgNum={1}
+        currentSubBreed=""
+        currentSubBreedList={null}
+        getImageLength={[Function]}
+        numOfImgs={null}
+        setCurrentBreed={[Function]}
+        setCurrentImgNum={[Function]}
+        setCurrentSubBreed={[Function]}
+        setCurrentSubBreedList={[Function]}
+      />
+      <button
+        id="view-button"
+        type="submit"
+      >
+        View Images
+      </button>
+    </form>
+    <div
+      className="images-viewer"
+    />
+  </div>
+</Fragment>
+`;

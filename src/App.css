@@ -58,6 +58,10 @@ input {
   position: relative;
 }
 
+.form-control2 {
+  margin-top: 5px;
+  position: relative;
+}
 .images-viewer {
   position: absolute;
   top: 20%;

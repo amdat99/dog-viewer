@@ -49,21 +49,23 @@ function Selectors({
     <React.Fragment>
       <div className="selector">
         <label>Breed</label>
-        {breeds ? (
+   
           <select
+          id='breed-select'
             className={"form-control"}
             value={currentBreed}
             onChange={(e) => setCurrentBreed(e.target.value)}
           >
-            {breeds.map((breed, i) => {
+            {breeds?
+            breeds.map((breed, i) => {
               return (
-                <option key={i} value={breed}>
+                <option id='breed-option' key={i} value={breed}>
                   {breed}
                 </option>
               );
-            })}
+            }):null}
           </select>
-        ) : null}
+        ) 
       </div>
 
       <div className="selector">
@@ -71,7 +73,7 @@ function Selectors({
 
         <select
           id={hasSubBreed ? null : "error-border"}
-          className={"form-control"}
+          className={"form-control2"}
           value={currentSubBreed}
           onChange={(e) => setCurrentSubBreed(e.target.value)}
         >
@@ -85,7 +87,7 @@ function Selectors({
               })
             : null}
         </select>
-        {currentSubBreed.length > 1 ? (
+        {currentSubBreed && currentSubBreed.length > 1 ? (
           <span id="sub-reset" onClick={() => setCurrentSubBreed("")}>
             {" "}
             all sub breeds
@@ -98,6 +100,7 @@ function Selectors({
         <input
           id={currentImgNum > numOfImgs ? "error-border" : null}
           type="number"
+          className="img-num"
           onChange={(e) => setCurrentImgNum(e.target.value)}
           name="quantity"
           min="1"
@@ -105,9 +108,6 @@ function Selectors({
         />
       </div>
 
-      <button id="view-button" type="submit">
-        View Images
-      </button>
     </React.Fragment>
   );
 }
