@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   const [breeds, setBreeds] = useState<string[]>([]);
   const [currentBreed, setCurrentBreed] = useState("");
-  const [currentSubBreedList, setCurrentSubBreedList] = useState([]);
+  const [currentSubBreedList, setCurrentSubBreedList] = useState<string[]>([]);
   const [currentSubBreed, setCurrentSubBreed] = useState("");
   const [imagesData, setImagesData] = useState([]);
   const [numOfImgs, setNumOfImgs] = useState(1);
@@ -127,7 +127,6 @@ function App() {
             currentSubBreedList={currentSubBreedList}
             breeds={breeds}
             setCurrentImgNum={setCurrentImgNum}
-            // @ts-ignore */
             setCurrentSubBreedList={setCurrentSubBreedList}
             setCurrentBreed={setCurrentBreed}
             setCurrentSubBreed={setCurrentSubBreed}
