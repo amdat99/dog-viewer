@@ -14,12 +14,7 @@ exports[`expect to render App component 1`] = `
       onSubmit={[Function]}
     >
       <Selectors
-        breeds={
-          Array [
-            "akitau",
-          ]
-        }
-        currentBreed=""
+        breeds={Array []}
         currentImgNum={1}
         currentSubBreed=""
         currentSubBreedList={null}

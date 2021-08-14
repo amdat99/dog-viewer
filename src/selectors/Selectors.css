@@ -1,0 +1,34 @@
+.selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 10px;
+  width: 150px;
+}
+.selector-num {
+  margin-left: 10px;
+  width: 150px;
+}
+
+.form-control {
+  margin-top: 5px;
+  position: relative;
+}
+
+.form-control2 {
+  margin-top: 5px;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .img-num {
+    width: 140px;
+  }
+
+  .selector-num {
+    position: absolute;
+    margin-top: 20px;
+    top: 10%;
+    left: 5%;
+  }
+}

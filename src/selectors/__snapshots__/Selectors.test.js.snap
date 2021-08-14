@@ -13,7 +13,6 @@ exports[`expect to render selectors component 1`] = `
       id="breed-select"
       onChange={[Function]}
     />
-    )
   </div>
   <div
     className="selector"
@@ -28,7 +27,7 @@ exports[`expect to render selectors component 1`] = `
     />
   </div>
   <div
-    className="selector"
+    className="selector-num"
   >
     <label>
       Num of Images (
