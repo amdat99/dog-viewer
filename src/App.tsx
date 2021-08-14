@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   const [breeds, setBreeds] = useState<string[]>([]);
   const [currentBreed, setCurrentBreed] = useState("");
-  const [currentSubBreedList, setCurrentSubBreedList] = useState<string[]>([]);
+  const [currentSubBreedList, setCurrentSubBreedList] = useState([]);
   const [currentSubBreed, setCurrentSubBreed] = useState("");
   const [imagesData, setImagesData] = useState([]);
   const [numOfImgs, setNumOfImgs] = useState(1);
@@ -30,9 +30,9 @@ function App() {
   useEffect(() => {
     if (breeds) {
       setCurrentBreed(breeds[0]);
-      console.log(currentBreed);
+    
     }
-  }, [setBreeds, breeds, currentBreed]);
+  }, [setBreeds, breeds]);
 
   const fetchImages = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -127,7 +127,7 @@ function App() {
             currentSubBreedList={currentSubBreedList}
             breeds={breeds}
             setCurrentImgNum={setCurrentImgNum}
-         
+            // @ts-ignore */
             setCurrentSubBreedList={setCurrentSubBreedList}
             setCurrentBreed={setCurrentBreed}
             setCurrentSubBreed={setCurrentSubBreed}
